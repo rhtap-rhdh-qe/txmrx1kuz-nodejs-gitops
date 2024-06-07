@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: txmrx1kuz-nodejs-gitops
+  description: This is GitOps manifest for txmrx1kuz-nodejs   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-name: txmrx1kuz-nodejs
+    janus-idp.io/tekton: txmrx1kuz-nodejs 
+    backstage.io/kubernetes-id: txmrx1kuz-nodejs 
+    backstage.io/techdocs-ref: dir:. 
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:txmrx1kuz-nodejs
